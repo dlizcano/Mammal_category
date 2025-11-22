@@ -2,7 +2,9 @@
 title: "_Saguinus oedipus_"
 subtitle: "Titi cabeciblanco"
 date: 11/10/2025
-author: Francy Forero e Iván Soto
+author: 
+  - Francy Forero
+  - Iván Soto
 format: html
 output:
   html_document:

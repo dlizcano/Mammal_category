@@ -2,7 +2,9 @@
 title: "_Callimico goeldii_"
 subtitle: "Mico de Goeldii"
 date: 11/10/2025
-author: Andrés Link y Pablo Stevenson
+author: 
+  - Andrés Link
+  - Pablo Stevenson
 format: html
 output:
   html_document:

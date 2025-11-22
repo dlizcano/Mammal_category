@@ -2,7 +2,9 @@
 title: "_Aotus zonalis_"
 subtitle: "Mono nocturno Chocoano"
 date: 11/10/2025
-author: Hugo Mantilla y Sebastián Montilla
+author: 
+  - Hugo Mantilla-Meluk
+  - Sebastián Montilla
 format: html
 output:
   html_document:

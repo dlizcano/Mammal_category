@@ -2,7 +2,9 @@
 title: "_Aotus lemurinus_"
 subtitle: "Mono nocturno andino"
 date: 11/10/2025
-author: Juan David Sánchez y Sebastián Montilla
+author: 
+  - Juan David Sánchez
+  - Sebastián Montilla
 format: html
 output:
   html_document:

@@ -2,7 +2,9 @@
 title: "_Alouatta palliata_"
 subtitle: "Mono aullador negro"
 date: 11/10/2025
-author: Julio Chacón y Alma Hernández
+author: 
+  - Julio Chacón-Pacheco
+  - Alma Hernández
 format: html
 output:
   html_document:

@@ -2,7 +2,7 @@
 title: "_Saguinus geoffroyi_"
 subtitle: "Titi chocoano"
 date: 11/10/2025
-author: Julio Chacón Pacheco
+author: Julio Chacón-Pacheco
 format: html
 output:
   html_document:

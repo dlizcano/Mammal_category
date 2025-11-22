@@ -2,7 +2,9 @@
 title: "_Ateles fusciceps_"
 subtitle: "Mono araña de cabeza negra, marimonda del Chocó"
 date: 11/10/2025
-author: Alma Hernández y Julio Chacón-Pacheco
+author: 
+  - Alma Hernández
+  - Julio Chacón-Pacheco
 format: html
 output:
   html_document:
