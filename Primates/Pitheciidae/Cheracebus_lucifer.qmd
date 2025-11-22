@@ -1,8 +1,9 @@
 ---
-title: "_Saguinus geoffroyi_"
-subtitle: "Titi chocoano"
+title: "_Cheracebus lucifer_"
+subtitle: "Mono tocon de mano amarilla, macaco"
 date: 11/10/2025
-author: Julio Chacón-Pacheco
+author: 
+  - Adriana Acero
 format: html
 output:
   html_document:
@@ -36,9 +37,9 @@ library(bsicons)
 #| echo: false
 value_box(
   title = NULL,
-  value = "NT",
+  value = "VU A2acd",
   # showcase = bs_icon("music-note-beamed"),
-  theme = value_box_theme(bg = "#CCE226"),#, fg = "#000000"),
+  theme = value_box_theme(bg = "#F9E814"),#, fg = "#000000"),
   max_height="100px"
 )
 
@@ -46,7 +47,7 @@ value_box(
 
 ## Foto
 
-![_Saguinus geoffroyi_ Gatun Lake, Panama (Foto: Charles J. Sharp)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg/500px-Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg)
+![_Cheracebus lucifer_   Sucumbíos, Ecuador. (Foto: Marc Faucer )](https://colombia.inaturalist.org/photos/11749601)
 
 ## Mapa
 
@@ -63,7 +64,7 @@ library(sf)
 library(mapview)
 library(tidyverse)
 # Si únicamente descargará los datos de una especie ----
-species1 <- c("Saguinus geoffroyi")
+species1 <- c("Cheracebus lucifer")
 # Descargar datos de ocurrencia de GBIF para esta especie; Este proceso puede tomar tiempo si existen muchos puntos!
 gbif_data_sp1 <- occ_search(scientificName = species1, 
                             hasCoordinate = TRUE, 
@@ -79,7 +80,7 @@ dat_sp1 <- gbif_data_sp1$data |> select(scientificName,
                                         species,
                                         year,
                                         identifier,
-                                        #collectionCode,
+                                        collectionCode,
                                         recordedBy
                                         ) |> 
   filter(recordedBy!="NA") # remove this point
@@ -100,7 +101,11 @@ mapview(sp_sf, zcol="acceptedScientificName", alpha = 0)
 
 ## Justificación 
 
-Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por poco la reducción en 18 años alcanza el 25%, también estuvo cerca de cumplir los criterios A2 acde. 
+Su distribución en Colombia se restringe a la Amazonía. Afronta amenazas como la cacería, uso para ceremonias, tráfico y pérdida de hábitat, con datos que soportan la reducción desde los años 90 en el sur de la amazonía. Se infiere que la especie presenta una reducción poblacional del 30% con una ventana móvil de 8 años en el pasado y 10 años en el futuro.  Asimismo, se considera que no presenta efecto rescate porque las poblaciones de la especie en Brasil presentan altas presiones en paisajes fragmentados. Se infiere que se redujo en un 30% con la salvedad de que es difícil observar y se deben estimular los estudios sobre esta especie. No hay posibilidades de efecto rescate porque en Brasil sufre de fuertes presiones.
+
+
+
+
 
 
 
@@ -108,7 +113,9 @@ Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por
 
 ## Evaluadores:
 
-Julio Chacón, Alma Hernández, Sebastián García, Juan David Sánchez, Andrés Link, Néstor Roncancio, Iván Soto.
+José González-Maya, Julio Chacon-Pacheco, Angela Maldonado, Sebastián García, Angela Maldonado, Iván Soto, Francy Forero, Andrés Link, Gabriela de Luna, Xyomara Carretero, Adriana Acero-Murcia, Diana Guzmán, Juan David Sánchez.
+
+
 
 
  

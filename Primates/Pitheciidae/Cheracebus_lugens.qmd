@@ -1,8 +1,9 @@
 ---
-title: "_Saguinus geoffroyi_"
-subtitle: "Titi chocoano"
+title: "_Cheracebus lugens_"
+subtitle: "Viudita de mano blanca, macaco"
 date: 11/10/2025
-author: Julio Chacón-Pacheco
+author: 
+  - Adriana Acero
 format: html
 output:
   html_document:
@@ -46,7 +47,7 @@ value_box(
 
 ## Foto
 
-![_Saguinus geoffroyi_ Gatun Lake, Panama (Foto: Charles J. Sharp)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg/500px-Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg)
+![_Cheracebus lugens_   La Pedrera, Amazonas, Colombia. (Foto: Gustavo Alarcón-Nieto )](https://inaturalist-open-data.s3.amazonaws.com/photos/126362224/medium.jpg)
 
 ## Mapa
 
@@ -63,7 +64,7 @@ library(sf)
 library(mapview)
 library(tidyverse)
 # Si únicamente descargará los datos de una especie ----
-species1 <- c("Saguinus geoffroyi")
+species1 <- c("Cheracebus lugens")
 # Descargar datos de ocurrencia de GBIF para esta especie; Este proceso puede tomar tiempo si existen muchos puntos!
 gbif_data_sp1 <- occ_search(scientificName = species1, 
                             hasCoordinate = TRUE, 
@@ -79,7 +80,7 @@ dat_sp1 <- gbif_data_sp1$data |> select(scientificName,
                                         species,
                                         year,
                                         identifier,
-                                        #collectionCode,
+                                        collectionCode,
                                         recordedBy
                                         ) |> 
   filter(recordedBy!="NA") # remove this point
@@ -100,7 +101,11 @@ mapview(sp_sf, zcol="acceptedScientificName", alpha = 0)
 
 ## Justificación 
 
-Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por poco la reducción en 18 años alcanza el 25%, también estuvo cerca de cumplir los criterios A2 acde. 
+Se estima que la reducción es del 25%, por poco alcanza la reducción en las últimas tres generaciones.
+
+
+
+
 
 
 
@@ -108,7 +113,9 @@ Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por
 
 ## Evaluadores:
 
-Julio Chacón, Alma Hernández, Sebastián García, Juan David Sánchez, Andrés Link, Néstor Roncancio, Iván Soto.
+José González-Maya, Julio Chacon-Pacheco, Angela Maldonado, Sebastián García, Angela Maldonado, Iván Soto, Francy Forero, Andrés Link, Gabriela de Luna, Xyomara Carretero, Adriana Acero-Murcia, Diana Guzmán, Juan David Sánchez.
+
+
 
 
  

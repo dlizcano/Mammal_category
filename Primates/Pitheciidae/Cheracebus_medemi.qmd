@@ -1,8 +1,9 @@
 ---
-title: "_Saguinus geoffroyi_"
-subtitle: "Titi chocoano"
+title: "_Cheracebus medemi_"
+subtitle: "Viudita de mano negra, macaco"
 date: 11/10/2025
-author: Julio Chacón-Pacheco
+author: 
+  - Javier García
 format: html
 output:
   html_document:
@@ -36,7 +37,7 @@ library(bsicons)
 #| echo: false
 value_box(
   title = NULL,
-  value = "NT",
+  value = "VU A4cd+B1ab(iii)",
   # showcase = bs_icon("music-note-beamed"),
   theme = value_box_theme(bg = "#CCE226"),#, fg = "#000000"),
   max_height="100px"
@@ -46,7 +47,7 @@ value_box(
 
 ## Foto
 
-![_Saguinus geoffroyi_ Gatun Lake, Panama (Foto: Charles J. Sharp)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg/500px-Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg)
+![_Cheracebus medemi_   Putumayo, Colombia. (Foto: Diego Cueva )](https://inaturalist-open-data.s3.amazonaws.com/photos/118926540/medium.jpeg)
 
 ## Mapa
 
@@ -63,7 +64,7 @@ library(sf)
 library(mapview)
 library(tidyverse)
 # Si únicamente descargará los datos de una especie ----
-species1 <- c("Saguinus geoffroyi")
+species1 <- c("Cheracebus medemi")
 # Descargar datos de ocurrencia de GBIF para esta especie; Este proceso puede tomar tiempo si existen muchos puntos!
 gbif_data_sp1 <- occ_search(scientificName = species1, 
                             hasCoordinate = TRUE, 
@@ -79,7 +80,7 @@ dat_sp1 <- gbif_data_sp1$data |> select(scientificName,
                                         species,
                                         year,
                                         identifier,
-                                        #collectionCode,
+                                        collectionCode,
                                         recordedBy
                                         ) |> 
   filter(recordedBy!="NA") # remove this point
@@ -100,7 +101,11 @@ mapview(sp_sf, zcol="acceptedScientificName", alpha = 0)
 
 ## Justificación 
 
-Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por poco la reducción en 18 años alcanza el 25%, también estuvo cerca de cumplir los criterios A2 acde. 
+Cheracebus medimi se evalúa como vulnerable ya que se sospecha que ha disminuido al menos un 30% en los últimos 25 años (tres generaciones) debido principalmente a la pérdida de hábitat en el sur de Colombia (principalmente por la creciente deforestación resultante de cultivos ilícitos y la extracción de madera) y por la caza para la subsistencia y los mercados locales. 
+
+
+
+
 
 
 
@@ -108,7 +113,9 @@ Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por
 
 ## Evaluadores:
 
-Julio Chacón, Alma Hernández, Sebastián García, Juan David Sánchez, Andrés Link, Néstor Roncancio, Iván Soto.
+Darwin Morales, Julio Chacon-Pacheco, Angela Maldonado, Sebastián García, Angela Maldonado, Iván Soto, Francy Forero, Andrés Link, Gabriela de Luna, Xyomara Carretero, Adriana Acero-Murcia, Diana Guzmán, Juan David Sánchez.
+
+
 
 
  

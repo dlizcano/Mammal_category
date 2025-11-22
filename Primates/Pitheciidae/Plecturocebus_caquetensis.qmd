@@ -1,8 +1,10 @@
 ---
-title: "_Saguinus geoffroyi_"
-subtitle: "Titi chocoano"
+title: "_Plecturocebus caquetensis_"
+subtitle: "Titi de Caquetá, mono bonito del Caquetá"
 date: 11/10/2025
-author: Julio Chacón-Pacheco
+author: 
+  - Adriana Acero
+  - Johanna Villota
 format: html
 output:
   html_document:
@@ -36,9 +38,9 @@ library(bsicons)
 #| echo: false
 value_box(
   title = NULL,
-  value = "NT",
+  value = "CR A4cde",
   # showcase = bs_icon("music-note-beamed"),
-  theme = value_box_theme(bg = "#CCE226"),#, fg = "#000000"),
+  theme = value_box_theme(bg = "#D81E05"),#, fg = "#000000"),
   max_height="100px"
 )
 
@@ -46,7 +48,7 @@ value_box(
 
 ## Foto
 
-![_Saguinus geoffroyi_ Gatun Lake, Panama (Foto: Charles J. Sharp)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg/500px-Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg)
+![_Plecturocebus caquetensis_   Caquetá, Colombia. (Foto: Adriana Acero-Murcia)](https://www.researchgate.net/profile/Rene-Lopez-Camacho-2/publication/326666704/figure/fig3/AS:653198108946432@1532745973027/The-Caqueta-titi-Plecturocebus-caquetensis-Photo-by-Adriana-Acero-Murcia.png)
 
 ## Mapa
 
@@ -63,7 +65,7 @@ library(sf)
 library(mapview)
 library(tidyverse)
 # Si únicamente descargará los datos de una especie ----
-species1 <- c("Saguinus geoffroyi")
+species1 <- c("Plecturocebus caquetensis")
 # Descargar datos de ocurrencia de GBIF para esta especie; Este proceso puede tomar tiempo si existen muchos puntos!
 gbif_data_sp1 <- occ_search(scientificName = species1, 
                             hasCoordinate = TRUE, 
@@ -73,13 +75,13 @@ gbif_data_sp1 <- occ_search(scientificName = species1,
 dat_sp1 <- gbif_data_sp1$data |> select(scientificName,
                                         decimalLatitude,
                                         decimalLongitude,
-                                        projectId,
+                                        #projectId,
                                         basisOfRecord,
                                         acceptedScientificName,
                                         species,
                                         year,
                                         identifier,
-                                        #collectionCode,
+                                        collectionCode,
                                         recordedBy
                                         ) |> 
   filter(recordedBy!="NA") # remove this point
@@ -100,7 +102,10 @@ mapview(sp_sf, zcol="acceptedScientificName", alpha = 0)
 
 ## Justificación 
 
-Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por poco la reducción en 18 años alcanza el 25%, también estuvo cerca de cumplir los criterios A2 acde. 
+Esta especie está catalogada como En Peligro Crítico debido a una disminución de la población, que se sospecha es de más del 80% en 24 años (tres generaciones), debido a una reducción del área de ocupación causada por la ganadería extensiva y el cultivo de cultivos ilícitos, y las causas de la reducción ciertamente no se han detenido. La especie también se ve afectada por taxones introducidos y contaminantes (fumigación de defoliantes como medida para reducir la producción de cocaína). Se sospecha que quedan menos de 100 individuos en estado silvestre y menos de 50 individuos maduros; esto no se puede utilizar para el criterio C, pero la especie aún califica como En Peligro Crítico bajo el criterio A. Se deben recopilar datos de población para una futura reevaluación para confirmar si el tamaño de la población es tan pequeño como se sospecha actualmente.
+
+En su estudio @Acero-Murcia2021 describen con detalle el comportamiento reproductivo de la especie.
+
 
 
 
@@ -108,7 +113,10 @@ Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por
 
 ## Evaluadores:
 
-Julio Chacón, Alma Hernández, Sebastián García, Juan David Sánchez, Andrés Link, Néstor Roncancio, Iván Soto.
+Javier García, Angela Maldonado, Xiomara Carretero.
+
+
+
 
 
  

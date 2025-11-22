@@ -1,8 +1,9 @@
 ---
-title: "_Saguinus geoffroyi_"
-subtitle: "Titi chocoano"
+title: "_Pithecia milleri_"
+subtitle: "Saki de Miller"
 date: 11/10/2025
-author: Julio Chacón-Pacheco
+author: 
+  - Javier García
 format: html
 output:
   html_document:
@@ -36,9 +37,9 @@ library(bsicons)
 #| echo: false
 value_box(
   title = NULL,
-  value = "NT",
+  value = "VU A4cd",
   # showcase = bs_icon("music-note-beamed"),
-  theme = value_box_theme(bg = "#CCE226"),#, fg = "#000000"),
+  theme = value_box_theme(bg = "#F9E814"),#, fg = "#000000"),
   max_height="100px"
 )
 
@@ -46,7 +47,7 @@ value_box(
 
 ## Foto
 
-![_Saguinus geoffroyi_ Gatun Lake, Panama (Foto: Charles J. Sharp)](https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg/500px-Geoffroy%27s_tamarin_%28Saguinus_geoffroyi%29_2.jpg)
+![_Pithecia milleri_   Napo Ecuador. (Foto: Oliver Angus)](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Pithecia_milleri_61716040.jpg/960px-Pithecia_milleri_61716040.jpg)
 
 ## Mapa
 
@@ -63,7 +64,7 @@ library(sf)
 library(mapview)
 library(tidyverse)
 # Si únicamente descargará los datos de una especie ----
-species1 <- c("Saguinus geoffroyi")
+species1 <- c("Pithecia milleri")
 # Descargar datos de ocurrencia de GBIF para esta especie; Este proceso puede tomar tiempo si existen muchos puntos!
 gbif_data_sp1 <- occ_search(scientificName = species1, 
                             hasCoordinate = TRUE, 
@@ -79,7 +80,7 @@ dat_sp1 <- gbif_data_sp1$data |> select(scientificName,
                                         species,
                                         year,
                                         identifier,
-                                        #collectionCode,
+                                        collectionCode,
                                         recordedBy
                                         ) |> 
   filter(recordedBy!="NA") # remove this point
@@ -100,7 +101,10 @@ mapview(sp_sf, zcol="acceptedScientificName", alpha = 0)
 
 ## Justificación 
 
-Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por poco la reducción en 18 años alcanza el 25%, también estuvo cerca de cumplir los criterios A2 acde. 
+Especie con distribución restringida en Putumayo y Caquetá. Se estima que la distribución de la especie se encuentra en un 70 y 80% en Colombia,  se sospecha una disminución poblacional en al menos el 30% en una ventana temporal de 30 años, con cambios ocurridos en los últimos 10 años y con proyección a  aumentar en los siguientes 20 años. La principal amenaza  es la deforestación (núcleo norte Amazonía y áreas protegidas como PNN La Paya) por la  fragmentación y reducción de la calidad del hábitat para la especie. Otra amenaza la representa la sobreexplotación de la especie es sujeta de uso. Se sugiere realizar estudios que confirmen sus límites de distribución hacia el oriente de Colombia, particularmente entre los límites de los departamentos del Putumayo, Caquetá y Amazonas.
+
+
+
 
 
 
@@ -108,7 +112,9 @@ Especie ampliamente distribuida y muy tráficada como mascota, es abundante. Por
 
 ## Evaluadores:
 
-Julio Chacón, Alma Hernández, Sebastián García, Juan David Sánchez, Andrés Link, Néstor Roncancio, Iván Soto.
+Darwin Morales, Angela Maldonado, Sebastián García, Angela Maldonado, Iván Soto, Francy Forero, Andrés Link, Gabriela de Luna, Xyomara Carretero, Adriana Acero-Murcia, Diana Guzmán, Juan David Sánchez.
+
+
 
 
  
