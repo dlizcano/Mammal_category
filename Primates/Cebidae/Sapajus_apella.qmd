@@ -1,0 +1,129 @@
+---
+title: "_Sapajus apella_"
+subtitle: "Mono maicero"
+date: 11/10/2025
+author: 
+  - Pablo Stevenson
+format: html
+output:
+  html_document:
+    theme:
+      bslib: true
+bibliography: refs.bib
+citation:
+  type: post-weblog
+  container-title: "Categorización de los mamíferos de Colombia"
+google-scholar: true
+---
+
+```{r}
+#| include: false
+#| eval: true
+#| echo: false
+library(bslib)
+library(bsicons)
+```
+
+
+## Categoria  
+
+<!-- ::: {.callout-warning}
+## VU A2 cde
+::: --> 
+
+```{r}
+#| include: true
+#| eval: true
+#| echo: false
+value_box(
+  title = NULL,
+  value = "LC",
+  # showcase = bs_icon("music-note-beamed"),
+  theme = value_box_theme(bg = "#60C659"),#, fg = "#000000"),
+  max_height="100px"
+)
+
+```
+
+## Foto
+
+![_Sapajus apella_  Brazil. (Foto: bedazlesa iNaturalist)](https://inaturalist-open-data.s3.amazonaws.com/photos/32698090/medium.jpg)
+
+## Mapa
+
+```{r}
+#| include: true
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+#| #label: fig-line-plot
+#| fig-cap: "Mapa de puntos. Datos de GBIF"
+library(rgbif)
+library(sf)
+library(mapview)
+library(tidyverse)
+# Si únicamente descargará los datos de una especie ----
+species1 <- c("Sapajus apella")
+# Descargar datos de ocurrencia de GBIF para esta especie; Este proceso puede tomar tiempo si existen muchos puntos!
+gbif_data_sp1 <- occ_search(scientificName = species1, 
+                            hasCoordinate = TRUE, 
+                            country = "CO",
+                            limit = 20000)
+# crear una tabla con los datos descargados:
+dat_sp1 <- gbif_data_sp1$data |> select(scientificName,
+                                        decimalLatitude,
+                                        decimalLongitude,
+                                        projectId,
+                                        basisOfRecord,
+                                        acceptedScientificName,
+                                        species,
+                                        year,
+                                        identifier,
+                                        collectionCode,
+                                        recordedBy
+                                        ) |> 
+  filter(recordedBy!="NA") # remove this point
+
+# definir CRS
+projlatlon <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+# convertir tabla de puntos a sf
+sp_sf <- st_as_sf(x = dat_sp1,
+                         coords = c("decimalLongitude",
+                                    "decimalLatitude"),
+                            crs = projlatlon)
+
+mapview(sp_sf, zcol="acceptedScientificName", alpha = 0)
+
+```
+
+
+
+## Justificación 
+
+Amplia distribución, adaptable, aunque hay tráfico, no parece reducir considerablemente sus poblaciones. 
+
+En su estudio @Alzate-Gaviria2023 presenta nuevos registros para Cundinamarca. 
+
+
+
+
+
+
+
+
+## Evaluadores:
+
+José González-Maya, Diego Gutierrez, Oscar E. Murillo-Garcia, Julio Chacon-Pacheco, Julio Chacón, Angela Maldonado, Sebastián García, Angela Maldonado, Iván Soto, Francy Forero, Andrés Link, Gabriela de Luna, Xyomara Carretero, Adriana Acero-Murcia, Diana Guzmán, Juan David Sánchez.
+
+
+
+
+ 
+
+
+
+## Bibliografía citada 
+
+::: {#refs}
+:::
